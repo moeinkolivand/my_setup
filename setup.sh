@@ -3,8 +3,8 @@
 set -e
 
 # --- 1. Handle input arguments or use defaults ---
-GNOME_DIR="${1:-./gnome-terminal-backup}"
-ZSH_DIR="${2:-./zsh-config}"
+GNOME_DIR="$PWD/gnome-terminal-backup"
+ZSH_DIR="$PWD/zsh-config"
 
 echo "📁 Using GNOME Terminal config from: $GNOME_DIR"
 echo "📁 Using Zsh config from: $ZSH_DIR"

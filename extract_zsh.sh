@@ -3,7 +3,7 @@
 set -e
 
 # Get config directory from CLI argument, fallback to ~/zsh-config
-CONFIG_DIR="${1:-$HOME/zsh-config}"
+CONFIG_DIR="$PWD/zsh-config"
 
 echo "📁 Using backup directory: $CONFIG_DIR"
 mkdir -p "$CONFIG_DIR"
@@ -46,4 +46,3 @@ else
 fi
 
 echo "✅ Zsh config backup complete at: $CONFIG_DIR"
-
