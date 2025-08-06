@@ -76,6 +76,14 @@ echo "🔁 Installing Tldr"
 cargo install tlrc --locked
 echo "✅ Installing Tldr Complete!"
 
+echo "🔁 Installing du-dust"
+cargo install du-dust
+echo "✅ Installing du-dust Complete!"
+
+echo "🔁 Installing procs"
+cargo install procs
+echo "✅ Installing procs Complete!"
+
 # --- Done ---
 echo ""
 echo "✅ Setup complete!"
