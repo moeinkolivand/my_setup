@@ -27,6 +27,7 @@ zinit light junegunn/fzf
 zinit light zsh-users/zsh-completions
 zinit light fdellwing/zsh-bat
 zinit light MichaelAquilina/zsh-you-should-use
+zinit light z-shell/zsh-eza
 
 # Zsh history configuration (must be set before loading plugins)
 HISTFILE=~/.zsh_history

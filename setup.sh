@@ -84,6 +84,9 @@ echo "🔁 Installing procs"
 cargo install procs
 echo "✅ Installing procs Complete!"
 
+echo "🔁 Installing navi"
+cargo install --locked navi
+echo "✅ Installing navi Complete!"
 # --- Done ---
 echo ""
 echo "✅ Setup complete!"
