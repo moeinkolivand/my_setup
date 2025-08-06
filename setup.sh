@@ -68,6 +68,14 @@ else
   echo "⚠️ terminal-settings.dconf not found in $GNOME_DIR"
 fi
 
+echo "🔁 Installing Rust And Cargo"
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh   
+echo "✅ Installing Rust And Cargo Completed!"
+
+echo "🔁 Installing Tldr"
+cargo install tlrc --locked
+echo "✅ Installing Tldr Complete!"
+
 # --- Done ---
 echo ""
 echo "✅ Setup complete!"
