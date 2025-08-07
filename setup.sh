@@ -2,6 +2,17 @@
 
 set -e
 
+
+echo "🔁 Installing Rust And Cargo"
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh   
+echo "✅ Installing Rust And Cargo Completed!"
+
+
+echo "🔁 Installing eza"
+cargo install eza
+echo "✅ Installing eza Completed!"
+
+
 # --- 1. Handle input arguments or use defaults ---
 GNOME_DIR="$PWD/gnome-terminal-backup"
 ZSH_DIR="$PWD/zsh-config"
@@ -68,10 +79,6 @@ else
   echo "⚠️ terminal-settings.dconf not found in $GNOME_DIR"
 fi
 
-echo "🔁 Installing Rust And Cargo"
-curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh   
-echo "✅ Installing Rust And Cargo Completed!"
-
 echo "🔁 Installing Tldr"
 cargo install tlrc --locked
 echo "✅ Installing Tldr Complete!"
@@ -87,6 +94,14 @@ echo "✅ Installing procs Complete!"
 echo "🔁 Installing navi"
 cargo install --locked navi
 echo "✅ Installing navi Complete!"
+
+echo "🔁 Installing helix"
+sudo add-apt-repository ppa:maveonair/helix-editor
+sudo apt update
+sudo apt install helix
+echo "✅ Installing helix Complete!"
+
+
 # --- Done ---
 echo ""
 echo "✅ Setup complete!"
