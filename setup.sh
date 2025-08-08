@@ -4,7 +4,7 @@ set -e
 
 
 echo "🔁 Installing Rust And Cargo"
-curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh   
+curl --proto '=https' --tlsv1.3 https://sh.rustup.rs -sSf | sh -s -- -y
 echo "✅ Installing Rust And Cargo Completed!"
 
 
@@ -12,6 +12,21 @@ echo "🔁 Installing eza"
 cargo install eza
 echo "✅ Installing eza Completed!"
 
+
+# --- Install Fastfetch ---
+echo "🔁 Installing Fastfetch"
+sudo apt install -y fastfetch
+echo "✅ Installing Fastfetch Complete!"
+
+# --- Configure Fastfetch ---
+FASTFETCH_SRC="$PWD/fastfetch"
+FASTFETCH_DEST="$HOME/.config/fastfetch"
+
+mkdir -p "$FASTFETCH_DEST/ascii"
+cp "$FASTFETCH_SRC/config.jsonc" "$FASTFETCH_DEST/" 2>/dev/null || echo "⚠️ config.jsonc not found in $FASTFETCH_SRC"
+cp "$FASTFETCH_SRC/ascii/samurai.txt" "$FASTFETCH_DEST/ascii/" 2>/dev/null || echo "⚠️ samurai.txt not found in $FASTFETCH_SRC/ascii"
+
+echo "✅ Fastfetch configuration restored!"
 
 # --- 1. Handle input arguments or use defaults ---
 GNOME_DIR="$PWD/gnome-terminal-backup"
